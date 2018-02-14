@@ -2,13 +2,19 @@ name: pandas
 dependencies:
   - Cython
   - matplotlib
-  - numexpr
   - nomkl
+  - numexpr
   - numpy
-  - python=3
+  - openpyxl
+  - pytables
+  - pytest
   - python-dateutil
+  - python=3
   - pytz
   - scipy
   - sqlalchemy
+  - xlrd
+  - xlsxwriter
+  - xlwt
   - pip:
     - git+https://github.com/spacetelescope/asv
