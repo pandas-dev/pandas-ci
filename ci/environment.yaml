@@ -5,6 +5,7 @@ dependencies:
   - numexpr
   - nomkl
   - numpy
+  - python=3
   - python-dateutil
   - pytz
   - scipy

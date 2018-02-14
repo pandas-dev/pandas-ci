@@ -15,8 +15,8 @@ before_install:
   - git clone https://github.com/pandas-dev/pandas
 
 install:
-  - conda build pandas/conda.recipe/meta.yaml
-  - conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml)
+  - conda build pandas/conda.recipe/meta.yaml --python=3
+  - conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3)
 
 script:
   - ci/asv.sh
