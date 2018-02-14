@@ -7,6 +7,7 @@ addons:
 
 before_install:
   - ci/install_miniconda.sh
+  - export PATH="$HOME/miniconda3/bin:$PATH"
   - conda env create -q -f ci/environment.yaml
   - conda uninstall -y --force -n pandas pandas
   - conda list
