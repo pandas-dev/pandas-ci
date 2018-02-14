@@ -1,0 +1,20 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker pull continuumio/miniconda
+  - apt-get update -qqy && apt-get install -q -y build-essential
+  - conda install -yq conda-build
+  - conda env create -q -f ci/environment.yaml
+  - conda uninstall -y -f pandas
+  - conda list
+  - git clone https://github.com/pandas-dev/pandas
+
+install:
+  - conda build pandas/conda.recipe/meta.yaml
+  - conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml)
+
+script:
+  - ci/asv.sh

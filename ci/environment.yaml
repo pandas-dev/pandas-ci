@@ -1,0 +1,12 @@
+name: pandas
+dependencies:
+  - Cython
+  - matplotlib
+  - numexpr
+  - numpy
+  - python-dateutil
+  - pytz
+  - scipy
+  - sqlalchemy
+  - pip:
+    - git+https://github.com/spacetelescope/asv
