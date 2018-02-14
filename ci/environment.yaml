@@ -3,6 +3,7 @@ dependencies:
   - Cython
   - matplotlib
   - numexpr
+  - nomkl
   - numpy
   - python-dateutil
   - pytz
