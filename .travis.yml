@@ -3,10 +3,13 @@ sudo: required
 services:
   - docker
 
+addons:
+  apt:
+    packages:
+      - build-essential
+
 before_install:
-  - docker pull continuumio/miniconda
-  - apt-get update -qqy && apt-get install -q -y build-essential
-  - conda install -yq conda-build
+  - ci/install_miniconda.sh
   - conda env create -q -f ci/environment.yaml
   - conda uninstall -y -f pandas
   - conda list
