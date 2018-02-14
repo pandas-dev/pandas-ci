@@ -8,7 +8,7 @@ RET=0
 
 echo "[ASV start]"
 
-cd asv_bench
+cd pandas/asv_bench
 
 asv machine --yes
 
