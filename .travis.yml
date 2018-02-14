@@ -1,8 +1,5 @@
 sudo: required
 
-services:
-  - docker
-
 addons:
   apt:
     packages:
@@ -11,8 +8,9 @@ addons:
 before_install:
   - ci/install_miniconda.sh
   - conda env create -q -f ci/environment.yaml
-  - conda uninstall -y -f pandas
+  - conda uninstall -y --force -n pandas pandas
   - conda list
+  - conda list -n pandas
   - git clone https://github.com/pandas-dev/pandas
 
 install:
