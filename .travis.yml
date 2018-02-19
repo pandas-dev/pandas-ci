@@ -1,3 +1,18 @@
+language: python
+python: 3.5
+
+matrix:
+    include:
+    - dist: trusty
+      env:
+        - JOB="ASV"
+    - dist: trusty
+      env:
+        - JOB="PIP"
+    - dist: trusty
+      env:
+        - JOB="CONDA"
+
 sudo: required
 
 addons:
@@ -7,15 +22,14 @@ addons:
 
 before_install:
   - export PATH="$HOME/miniconda3/bin:$PATH"
-  - ci/install_miniconda.sh
-  - conda env create -q -f ci/environment.yaml
-  - conda list
-  - conda list -n pandas
   - git clone https://github.com/pandas-dev/pandas
+  - ci/install_miniconda.sh
+  - ci/before_install.sh
 
 install:
-  - conda build pandas/conda.recipe/meta.yaml --python=3
-  - conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3)
+  - conda list
+  - conda list -n pandas
+  - ci/install.sh
 
 script:
-  - ci/asv.sh
+  - ci/script.sh

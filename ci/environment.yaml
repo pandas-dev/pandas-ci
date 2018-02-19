@@ -18,3 +18,4 @@ dependencies:
   - xlwt
   - pip:
     - git+https://github.com/spacetelescope/asv
+    - pytest-xdist
