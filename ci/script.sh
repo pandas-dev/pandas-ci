@@ -2,11 +2,11 @@
 
 echo "inside $0"
 
-if [ $JOB='ASV' ]; then
+if [ "$JOB" == "ASV" ]; then
     ci/asv.sh
-elif [ $JOB='PIP' ]; then
+elif [ "$JOB" == "PIP" ]; then
     ci/pip.sh
-elif [ $JOB='CONDA' ]; then
+elif [ "$JOB" == "CONDA" ]; then
     ci/conda.sh
 fi
 
