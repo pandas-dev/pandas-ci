@@ -13,7 +13,7 @@ if [ "$JOB" == "ASV" ]; then
 elif [ "$JOB" == "PIP" ]; then
 
     echo "[building release]"
-    push ../pandas
+    pushd ../pandas
     time bash scripts/build_dist_for_release.sh || exit 1
     time conda uninstall -y cython
     time pip install dist/*tar.gz || exit 1
