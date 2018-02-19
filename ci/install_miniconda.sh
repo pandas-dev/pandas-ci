@@ -21,4 +21,8 @@ echo "[update conda]"
 conda config --set quiet true --set always_yes true --set changeps1 false || exit 1
 conda update -q conda
 
-conda install -yq conda-build 
+conda install -yq conda-build
+
+echo
+echo "[show conda]"
+conda info
