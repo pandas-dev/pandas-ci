@@ -27,3 +27,5 @@ echo "DONE displaying failed asvs benchmarks."
 rm failed_asv.txt
 
 echo "[ASV DONE]"
+
+exit "$RET"
