@@ -3,9 +3,9 @@ python: 3.5
 
 matrix:
     include:
-    - dist: trusty
-      env:
-        - JOB="ASV"
+    #- dist: trusty
+    #  env:
+    #    - JOB="ASV"
     - dist: trusty
       env:
         - JOB="PIP"
