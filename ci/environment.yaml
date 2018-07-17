@@ -1,6 +1,6 @@
 name: pandas
 dependencies:
-  - Cython
+  - Cython=0.28.2
   - matplotlib
   - nomkl
   - numexpr
