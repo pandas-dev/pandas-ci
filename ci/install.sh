@@ -7,7 +7,7 @@ source activate pandas
 if [ "$JOB" == "ASV" ]; then
 
     echo "[building asv]"
-    time conda build pandas/conda.recipe/meta.yaml --python=3.6
+    time conda build pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14
     time conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14)
 
 elif [ "$JOB" == "PIP" ]; then
@@ -22,7 +22,7 @@ elif [ "$JOB" == "PIP" ]; then
 elif [ "$JOB" == "CONDA" ]; then
 
     echo "[conda]"
-    time conda build pandas/conda.recipe/meta.yaml --python=3.6
+    time conda build pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14
     time conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14)
 
 fi
