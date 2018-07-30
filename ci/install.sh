@@ -8,7 +8,7 @@ if [ "$JOB" == "ASV" ]; then
     time conda build pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14
 
     echo "[installing asv]"
-    time conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14)
+    time conda install -n pandas --use-local pandas
 
 elif [ "$JOB" == "PIP" ]; then
 
@@ -33,6 +33,6 @@ elif [ "$JOB" == "CONDA" ]; then
     time conda build pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14
 
     echo "[install conda]"
-    time conda install -n pandas $(conda build --output pandas/conda.recipe/meta.yaml --python=3.6 --numpy=1.14)
+    time conda install -n pandas --use-local pandas
 
 fi
