@@ -14,18 +14,14 @@ elif [ "$JOB" == "PIP" ]; then
 
     source activate pandas
 
-    pushd pandas
-
     echo "[building dist]"
-    time bash scripts/build_dist_for_release.sh || exit 1
+    time bash pandas/scripts/build_dist_for_release.sh || exit 1
 
     echo "[uninstall cython]"
     time conda uninstall -y cython
 
     echo "[pip install]"
     time pip install dist/*tar.gz || exit 1
-
-    popd
 
 elif [ "$JOB" == "CONDA" ]; then
 
