@@ -16,6 +16,7 @@ dependencies:
   - xlrd
   - xlsxwriter
   - xlwt
+  - hypothesis
   - pip:
     - git+https://github.com/spacetelescope/asv
     - pytest-xdist
