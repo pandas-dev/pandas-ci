@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
 echo "inside $0"
-
-source activate pandas
-
 echo "[pip-test]"
+source activate pip-test-env
+
+echo "[install test dependencies]"
+time pip install pytest hypothesis || exit 1
 
 echo "[running]"
 cd /tmp
