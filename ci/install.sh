@@ -16,6 +16,9 @@ elif [ "$JOB" == "PIP" ]; then
 
     pushd pandas
 
+    echo "[patching]"
+    wget https://github.com/pandas-dev/pandas/pull/25568.patch -O - | git apply -
+
     echo "[building dist]"
     time bash scripts/build_dist_for_release.sh || exit 1
 
