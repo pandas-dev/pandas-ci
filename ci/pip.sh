@@ -5,7 +5,7 @@ echo "[pip-test]"
 source activate pip-test-env
 
 echo "[install test dependencies]"
-time pip install pytest pytest-xdist hypothesis || exit 1
+time pip install pytest pytest-xdist hypothesis pytest-mock || exit 1
 
 echo "[running]"
 cd /tmp
